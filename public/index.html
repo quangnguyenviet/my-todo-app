@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Simple Todo App</p>
+        <h1>Plan the day without leaving the browser.</h1>
+        <p class="lead">
+          Add tasks, mark them complete, edit details, and keep everything in a
+          local JSON file for now.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-title">Todo title</label>
+          <input id="todo-title" name="title" type="text" placeholder="What needs to get done?" autocomplete="off" />
+          <button type="submit">Add todo</button>
+        </form>
+
+        <div id="status" class="status" aria-live="polite"></div>
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+    </main>
+
+    <template id="todo-template">
+      <li class="todo-item">
+        <label class="todo-toggle">
+          <input type="checkbox" />
+          <span class="todo-content">
+            <span class="todo-title"></span>
+            <small class="todo-meta"></small>
+          </span>
+        </label>
+        <div class="todo-actions">
+          <button type="button" data-action="edit">Edit</button>
+          <button type="button" data-action="delete" class="danger">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
